@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Rahasia (jangan pernah di-commit)
+.env
+*.pem
+*.key
+
+# File editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

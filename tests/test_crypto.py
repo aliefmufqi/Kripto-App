@@ -1,7 +1,3 @@
-"""
-Unit test untuk fungsi inti (Ketentuan Teknis Umum: minimal 5 unit test).
-Jalankan: python -m pytest tests/ -v
-"""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 

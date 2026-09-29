@@ -1,9 +1,3 @@
-"""
-Fitur pengayaan: Enkripsi hibrida.
-Data dienkripsi dengan AES-256-GCM memakai kunci sesi acak (bukan dari password),
-lalu kunci sesi tersebut dibungkus (di-wrap) memakai RSA-OAEP dengan kunci publik penerima.
-Ini meniru pola dunia nyata (mis. PGP): AES cepat untuk data besar, RSA untuk pertukaran kunci.
-"""
 import os
 import base64
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM

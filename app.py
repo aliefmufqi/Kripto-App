@@ -127,7 +127,7 @@ def hybrid_decrypt_route():
     payload = data.get("payload", {})
     priv = _hybrid_keys.get(key_id)
     if not priv:
-        return jsonify({"error": "key_id tidak dikenal (kunci privat hanya ada di memori server demo)"}), 400
+        return jsonify({"error": "key_id tidak dikenal (kunci privat hanya ada di memori server)"}), 400
     try:
         plaintext = hybrid.hybrid_decrypt(payload, priv)
         return jsonify({"plaintext": plaintext.decode("utf-8")})

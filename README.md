@@ -2,7 +2,7 @@
 
 Tugas Proyek Aplikasi Kriptografi — Mata Kuliah Keamanan Informasi
 Program Studi Informatika, Fakultas Teknik, Universitas Siliwangi
-**Topik A: Aplikasi Enkripsi (Algoritma Modern)**
+**Aplikasi Enkripsi (Algoritma Modern)**
 
 ## Deskripsi
 
@@ -66,11 +66,6 @@ Buka `http://localhost:5000` di peramban. Tiga tab tersedia: **Teks**, **Berkas*
 python -m pytest tests/ -v
 ```
 
-**Menjalankan pengujian kuantitatif (menghasilkan `hasil_pengujian.xlsx`):**
-```bash
-python3 benchmark/run_benchmark.py
-```
-
 ## Contoh Penggunaan
 
 ### Enkripsi teks lewat antarmuka web
@@ -79,12 +74,6 @@ python3 benchmark/run_benchmark.py
 3. Klik **Enkripsi** → bundle base64 (berisi salt, nonce, cipherteks) ditampilkan.
 4. Untuk dekripsi, tempel bundle tersebut di tab **Dekripsi** beserta kata sandi yang sama.
 
-### Enkripsi teks lewat API (curl)
-```bash
-curl -X POST http://localhost:5000/api/encrypt/text \
-  -H "Content-Type: application/json" \
-  -d '{"plaintext":"data rahasia","password":"kata-sandi-kuat","algo":"aes-gcm","kdf":"argon2"}'
-```
 
 ### Enkripsi berkas
 1. Buka tab **Berkas**, unggah berkas apa pun (gambar, PDF, dsb.), isi kata sandi.
@@ -95,14 +84,6 @@ curl -X POST http://localhost:5000/api/encrypt/text \
 1. Buka tab **Hibrida**, klik **Bangkitkan Kunci RSA-2048** (mensimulasikan penerima).
 2. Salin kunci publik ke bagian enkripsi (mensimulasikan pengirim), isi plainteks, klik **Enkripsi Hibrida**.
 3. Salin payload hasil ke bagian dekripsi bersama `key_id` yang sama, klik **Dekripsi Hibrida**.
-
-## Skenario Demo UTS
-
-1. Enkripsi satu berkas PDF lewat tab Berkas.
-2. Tunjukkan isi cipherteks (bundle `.enc.json`) — tidak terbaca / tampak acak.
-3. Dekripsi dengan kata sandi benar → berkas PDF asli kembali utuh.
-4. Coba dekripsi dengan kata sandi salah → aplikasi menolak (`DecryptionError`).
-5. Ubah satu byte pada berkas `.enc.json` lalu coba dekripsi → aplikasi menolak (verifikasi tag AEAD gagal).
 
 ## Keamanan yang Diterapkan
 

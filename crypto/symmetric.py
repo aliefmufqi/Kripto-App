@@ -1,8 +1,3 @@
-"""
-Modul enkripsi simetri modern: AES-256-GCM dan ChaCha20-Poly1305.
-Kunci diturunkan dari kata sandi memakai PBKDF2, scrypt, atau Argon2 dengan salt acak.
-IV/nonce dibangkitkan acak untuk setiap enkripsi dan disimpan bersama cipherteks.
-"""
 import os
 import base64
 import json

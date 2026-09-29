@@ -1,12 +1,3 @@
-"""
-Aplikasi Web Enkripsi (Topik A)
-Keamanan Informasi - Tugas Proyek Aplikasi Kriptografi
-
-Fitur:
-- Enkripsi/dekripsi teks & berkas dengan AES-256-GCM atau ChaCha20-Poly1305
-- KDF: PBKDF2 / scrypt / Argon2 dengan salt acak
-- Enkripsi hibrida (RSA-OAEP) sebagai fitur pengayaan
-"""
 import os
 import io
 import base64
@@ -19,10 +10,7 @@ from crypto import hybrid
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 50 * 1024 * 1024  # 50 MB
 
-# Simpan pasangan kunci RSA demo hybrid IN-MEMORY (untuk keperluan demo saja,
-# di produksi kunci privat harus disimpan terenkripsi & di luar kode sumber)
 _hybrid_keys = {}
-
 
 @app.route("/")
 def index():
